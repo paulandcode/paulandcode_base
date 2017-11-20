@@ -23,6 +23,6 @@ public interface SysUserService {
 	 * @param baseURL
 	 * @return
 	 */
-	Result fileUpload(MultipartFile[] file, String baseURL);
+	Result fileUpload(MultipartFile[] file);
 	
 }

@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.paulandcode.dao.SysUserDao;
 import com.paulandcode.service.SysUserService;
+import com.paulandcode.utils.HttpContextUtils;
 import com.paulandcode.utils.PropertiesLoader;
 import com.paulandcode.utils.Result;
 
@@ -39,7 +40,9 @@ public class SysUserServiceImpl implements SysUserService {
 	}
 
 	@Override
-	public Result fileUpload(MultipartFile[] file, String baseURL) {
+	public Result fileUpload(MultipartFile[] file) {
+		// http://localhost:8080/paulandcode_base/
+		String basePath = HttpContextUtils.getHttpServletRequest().getRequestURL().toString().split("sys/fileUpload")[0];
 		// fileUpload/now.txt.txt
 		String filePath = "fileUpload/" + file[0].getOriginalFilename();
 		// D:/java/tomcat/webapps/paulandcode_base/
@@ -58,7 +61,7 @@ public class SysUserServiceImpl implements SysUserService {
 			return Result.error(e.getMessage());
 		}
 		logger.info("附件上传成功!");
-		return Result.ok().put("fileURL", baseURL + filePath);
+		return Result.ok().put("fileURL", basePath + filePath);
 	}
 
 }

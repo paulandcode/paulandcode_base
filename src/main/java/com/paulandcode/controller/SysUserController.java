@@ -45,9 +45,7 @@ public class SysUserController {
 	@ResponseBody
 	public Result fileUpload(MultipartFile[] file, HttpServletRequest request) {
 		// 此处是处理参数,不算是处理业务逻辑
-		// http://localhost:8080/paulandcode_base/
-		String baseURL = request.getRequestURL().toString().split("sys/fileUpload")[0];
-		return sysUserService.fileUpload(file, baseURL);
+		return sysUserService.fileUpload(file);
 	}
 	
 }
