@@ -7,13 +7,13 @@
 	<h1>
 		<a href="sys/getUserByName?name=paul">nice</a>
 	</h1>
-	form上传文件:
+	form上传附件:
 	</br>
 	<form action="sys/fileUpload" enctype="multipart/form-data" method="post">
 		<input type="file" name="file" />
 		<input type="submit" value="上传" />
 	</form>
-	ajax上传文件:
+	ajax上传附件:
 	</br>
 	<form id="uploadForm">
 		<input type="file" name="file" />
