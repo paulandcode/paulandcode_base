@@ -17,12 +17,14 @@ import com.paulandcode.utils.PropertiesLoader;
 import com.paulandcode.utils.Result;
 
 /**
+ * 用户
+ * 
  * @author 黄建峰
  * @date 2017年9月19日 下午3:26:27
  */
 @Service("sysUserService")
 public class SysUserServiceImpl implements SysUserService {
-	
+
 	public static PropertiesLoader loader = new PropertiesLoader("config/config.properties");
 
 	private static Logger logger = Logger.getLogger(SysUserServiceImpl.class);
@@ -42,7 +44,8 @@ public class SysUserServiceImpl implements SysUserService {
 	@Override
 	public Result fileUpload(MultipartFile[] file) {
 		// http://localhost:8080/paulandcode_base/
-		String basePath = HttpContextUtils.getHttpServletRequest().getRequestURL().toString().split("sys/fileUpload")[0];
+		String basePath = HttpContextUtils.getHttpServletRequest().getRequestURL().toString()
+				.split("sys/fileUpload")[0];
 		// fileUpload/now.txt.txt
 		String filePath = "fileUpload/" + file[0].getOriginalFilename();
 		// D:/java/tomcat/webapps/paulandcode_base/

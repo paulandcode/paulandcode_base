@@ -105,9 +105,11 @@ public class XmlMapperBuilder extends BaseBuilder {
 		parsePendingStatements();
 	}
 
-/*************************************** Modify begin. ***************************************/
+	/***************************************
+	 * Modify begin.
+	 ***************************************/
 	/**
-	 *  增加解析方法，原方法不解析相同的resource
+	 * 增加解析方法，原方法不解析相同的resource
 	 */
 	public void parse1() {
 		// if (!configuration.isResourceLoaded(resource)) {
@@ -120,7 +122,10 @@ public class XmlMapperBuilder extends BaseBuilder {
 		parsePendingChacheRefs();
 		parsePendingStatements();
 	}
-/**************************************** Modify end. ****************************************/
+
+	/****************************************
+	 * Modify end.
+	 ****************************************/
 
 	public XNode getSqlFragment(String refid) {
 		return sqlFragments.get(refid);
@@ -419,7 +424,8 @@ public class XmlMapperBuilder extends BaseBuilder {
 		String collection = "collection";
 		String caseString = "case";
 		String select = "select";
-		if (association.equals(context.getName()) || collection.equals(context.getName()) || caseString.equals(context.getName())) {
+		if (association.equals(context.getName()) || collection.equals(context.getName())
+				|| caseString.equals(context.getName())) {
 			if (context.getStringAttribute(select) == null) {
 				ResultMap resultMap = resultMapElement(context, resultMappings);
 				return resultMap.getId();

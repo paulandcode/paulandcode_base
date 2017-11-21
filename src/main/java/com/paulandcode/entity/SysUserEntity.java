@@ -3,6 +3,8 @@ package com.paulandcode.entity;
 import java.io.Serializable;
 
 /**
+ * 用户
+ * 
  * @author 黄建峰
  * @date 2017年9月19日 下午3:26:11
  */

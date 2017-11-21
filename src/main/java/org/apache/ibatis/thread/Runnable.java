@@ -19,6 +19,7 @@ import org.springframework.core.NestedIOException;
 
 /**
  * 刷新使用进程
+ * 
  * @author 黄建峰
  * @date 2017年10月23日 下午2:11:31
  */
@@ -76,7 +77,8 @@ public class Runnable implements java.lang.Runnable {
 
 	public void start(final Runnable runnable) {
 		ThreadFactory myThreadFactory = Executors.defaultThreadFactory();
-		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(3, 5, 1, TimeUnit.SECONDS, new LinkedBlockingDeque<java.lang.Runnable>(128), myThreadFactory);
+		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(3, 5, 1, TimeUnit.SECONDS,
+				new LinkedBlockingDeque<java.lang.Runnable>(128), myThreadFactory);
 		java.lang.Runnable myRunable = new java.lang.Runnable() {
 			@Override
 			public void run() {

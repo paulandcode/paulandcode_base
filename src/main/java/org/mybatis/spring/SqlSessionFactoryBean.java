@@ -119,7 +119,7 @@ public class SqlSessionFactoryBean
 	private Class<?> typeAliasesSuperType;
 
 	/**
-	 *  issue #19. No default provider.
+	 * issue #19. No default provider.
 	 */
 	private DatabaseIdProvider databaseIdProvider;
 
