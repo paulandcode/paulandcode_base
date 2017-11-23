@@ -14,14 +14,15 @@ import com.paulandcode.service.SysUserService;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 // 若配置文件在WEB_INF下,则这么写:"file:src/main/webapp/WEB-INF/applicationContext.xml"
-@ContextConfiguration({"classpath:config/spring-*.xml"})
+// 需要把spring-mvc.xml中的注释junit加载配置文件报错的两句话注释掉
+@ContextConfiguration({ "classpath:config/spring-*.xml" })
 public class ServiceTest {
-	
+
 	@Autowired
 	private SysUserService sysUserService;
 
 	@Test
-	public void test1(){
+	public void test1() {
 		System.out.println(sysUserService.getUserByName("paul"));
 	}
 
